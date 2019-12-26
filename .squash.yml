@@ -41,7 +41,5 @@ deployments:
             - cd /code/mysite && POSTGRES_HOST=localhost POSTGRES_USER=postgres POSTGRES_PASSWORD=postgres POSTGRES_DB=test_db coverage run ./manage.py test --verbosity 2 && coverage report --fail-under=30
       - test:
           dockerimage: python:3.6
-          build_steps:
-            - apt-get update && apt-get install -y git curl
           scripts:
             - echo true
